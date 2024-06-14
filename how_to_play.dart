@@ -1,30 +1,25 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HowToPlayPage(),
-    );
-  }
-}
-
 class HowToPlayPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Color(0xFF7775F8),
-        title: const Text(
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: Text(
           'How To Play',
           style: TextStyle(color: Colors.black),
         ),
       ),
       body: Container(
-        color: const Color(0xFF7775F8), // Set the whole background color
+        color: Color(0xFF7775F8),
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -32,7 +27,7 @@ class HowToPlayPage extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: BorderRadius.circular(8.0),
               ),
               child: SingleChildScrollView(
                 child: Column(
@@ -172,3 +167,4 @@ class InstructionStep extends StatelessWidget {
     );
   }
 }
+
